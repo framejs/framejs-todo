@@ -1,0 +1,27 @@
+{
+  "name": "@framejs/todo-frame",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "node node_modules/webpack/bin/webpack.js",
+    "deploy": "rm -rf public && cp -R dist public/ && cp index.html public/ && firebase deploy",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@framejs/core": "0.0.3",
+    "@framejs/renderer-preact": "0.0.4",
+    "@types/node": "^9.4.2",
+    "clean-webpack-plugin": "^0.1.18",
+    "compression-webpack-plugin": "^1.1.6",
+    "css-loader": "^0.28.9",
+    "html-webpack-plugin": "^2.30.1",
+    "to-string-loader": "^1.1.5",
+    "ts-loader": "^3.5.0",
+    "typescript": "^2.7.1",
+    "uglifyjs-webpack-plugin": "^1.1.8",
+    "webpack": "^3.10.0"
+  }
+}

@@ -5,7 +5,7 @@ import { withPreact, h } from '@framejs/renderer-preact';
     tag: 'todo-input',
     style: require('./todo-input.css')
 })
-export class TodoInput extends withPreact(HTMLElement) {
+class TodoInput extends withPreact(HTMLElement) {
     public value: string = '';
     @Event() onTodoInputSubmit: EventEmitter;
 

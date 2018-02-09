@@ -46,7 +46,7 @@ class MyTodo extends withPreact(HTMLElement) {
                     <ul id="list-container">
                         {this._list.map((item, index) => (
                         <todo-item checked={item.checked} index={index}>
-                            {item.text}
+                            <slot>{item.text}</slot>
                         </todo-item>
                         ))}
                     </ul>

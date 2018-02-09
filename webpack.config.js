@@ -1,9 +1,11 @@
+const webpack = require('webpack');
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const glob = require("glob");
 const CompressionPlugin = require("compression-webpack-plugin");
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
   entry: "./todo/my-todo/my-todo.tsx",
@@ -31,7 +33,7 @@ module.exports = {
           "to-string-loader",
           {
             loader: "css-loader",
-            options: { sourceMap: false }
+            options: { sourceMap: false, minimize: true }
           }
         ]
       }
@@ -41,6 +43,8 @@ module.exports = {
     new CleanWebpackPlugin(["dist"], {
       root: process.cwd()
     }),
+    // new BundleAnalyzerPlugin(),
+    new webpack.optimize.ModuleConcatenationPlugin(),
     new UglifyJsPlugin({
       sourceMap: true,
       uglifyOptions: {

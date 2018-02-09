@@ -22,18 +22,22 @@ li input {
   /* Mobile Safari */
   -webkit-appearance: none;
   appearance: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  visibility: hidden;
 }
 
 li input:after {
   content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="50" fill="none" stroke="#ededed" stroke-width="3"/></svg>');
+  visibility: visible;
 }
 
 li input:checked:after {
   content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="50" fill="none" stroke="#bddad5" stroke-width="3"/><path fill="#5dc2af" d="M72 25L42 71 27 56l-4 4 20 20 34-52z"/></svg>');
+  visibility: visible;
 }
 
 li label {
-  white-space: pre;
+  /* white-space: pre; */
   word-break: break-word;
   padding: 15px 60px 15px 15px;
   margin-left: 45px;
@@ -75,7 +79,7 @@ li button {
   right: 10px;
   bottom: 0;
   width: 40px;
-  height: 40px;
+  min-height: 40px;
   margin: auto 0;
   font-size: 30px;
   color: #cc9a9a;

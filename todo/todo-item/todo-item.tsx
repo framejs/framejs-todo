@@ -5,7 +5,7 @@ import { withPreact, h } from '@framejs/renderer-preact';
     tag: 'todo-item',
     style: require('./todo-item.css')
 })
-export class TodoItem extends withPreact(HTMLElement) {
+class TodoItem extends withPreact(HTMLElement) {
     @Attribute() checked: boolean = false;
     @Property() index: number;
     @Event() onTodoItemChecked: EventEmitter;

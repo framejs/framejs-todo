@@ -2,6 +2,8 @@
 
 An example of minimal setup to build FrameJS custom elements inspired by [web-components-todo](https://github.com/shprink/web-components-todo).
 
+> Only works in browsers supports web components v1 spec.
+
 #### Syntax
 
 ```tsx
@@ -12,7 +14,7 @@ import { withPreact, h } from '@framejs/renderer-preact';
     tag: 'todo-item',
     style: require('./todo-item.css')
 })
-export class TodoItem extends withPreact(HTMLElement) {
+class TodoItem extends withPreact(HTMLElement) {
     @Attribute() checked: boolean = false;
     @Property() index: number;
     @Event() onTodoItemChecked: EventEmitter;
